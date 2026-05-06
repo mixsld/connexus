@@ -29,11 +29,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    /*
-     * suppressHydrationWarning is required on <html> because ThemeProvider's
-     * inline FOUC script may add the `dark` class before React hydrates,
-     * causing a mismatch between server-rendered and client HTML.
-     */
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
@@ -41,13 +36,12 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <ThemeProvider>
-          {/* ── Site header ──────────────────────────────────────────────── */}
           <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/80">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
               {/* Wordmark */}
               <a
                 href="/"
-                className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4A853]"
+                className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
                 aria-label="Connexus home"
               >
                 <span
@@ -63,14 +57,13 @@ export default function RootLayout({
               {/* Right side nav */}
               <div className="flex items-center gap-1">
                 <NavLinks />
+                <ModeToggle />
               </div>
             </div>
           </header>
 
-          {/* ── Page content ─────────────────────────────────────────────── */}
           <main className="flex-1">{children}</main>
 
-          {/* ── Footer ───────────────────────────────────────────────────── */}
           <footer className="border-t border-gray-200 py-6 dark:border-gray-800">
             <p className="text-center text-xs text-gray-400 dark:text-gray-600">
               © {new Date().getFullYear()} Connexus · University of Santo Tomas

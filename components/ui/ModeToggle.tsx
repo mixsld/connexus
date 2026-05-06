@@ -1,24 +1,11 @@
 "use client";
 
-/**
- * ModeToggle — dark / light mode toggle button.
- *
- * Design spec (design.md):
- *   - Consumes ThemeProvider context via useTheme()
- *   - aria-pressed reflects current theme (true = dark mode active)
- *   - Visible label text ("Dark mode" / "Light mode") for accessibility
- *   - Persists chosen theme to localStorage (handled inside ThemeProvider)
- *   - WCAG 2.1 AA: focus ring, minimum 44×44 px touch target, visible label
- */
-
 import { useTheme } from "./ThemeProvider";
-
-// ── Icons ─────────────────────────────────────────────────────────────────────
 
 function SunIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-5 w-5"
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden="true"
@@ -31,7 +18,7 @@ function SunIcon() {
 function MoonIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-5 w-5"
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden="true"
@@ -45,8 +32,6 @@ function MoonIcon() {
   );
 }
 
-// ── ModeToggle ────────────────────────────────────────────────────────────────
-
 export default function ModeToggle() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
@@ -57,24 +42,9 @@ export default function ModeToggle() {
       onClick={toggleTheme}
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className={[
-        // Minimum 44×44 px touch target (WCAG 2.5.5)
-        "inline-flex min-h-[44px] min-w-[44px] items-center gap-2 rounded-xl px-3 py-2",
-        // Typography
-        "text-sm font-medium",
-        // Colours — light mode
-        "bg-gray-100 text-gray-700 hover:bg-gray-200",
-        // Colours — dark mode
-        "dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
-        // Focus ring — WCAG 2.4.7 visible focus
-        "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
-        // Smooth transition
-        "transition-colors duration-150",
-      ].join(" ")}
+      className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 transition-colors duration-150"
     >
       {isDark ? <SunIcon /> : <MoonIcon />}
-      {/* Visible label — required for WCAG 1.3.1 / 4.1.2 */}
-      <span>{isDark ? "Light mode" : "Dark mode"}</span>
     </button>
   );
 }
