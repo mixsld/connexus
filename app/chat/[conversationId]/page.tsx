@@ -274,7 +274,7 @@ export default function ChatPage() {
         <p className="text-base font-semibold text-gray-900 dark:text-gray-50">{error}</p>
         <a
           href="/connections"
-          className="mt-4 inline-block text-sm text-amber-600 hover:underline dark:text-amber-400"
+          className="mt-4 inline-block text-sm text-violet-600 hover:underline dark:text-violet-400"
         >
           Back to connections
         </a>
@@ -290,7 +290,7 @@ export default function ChatPage() {
         <a
           href="/connections"
           aria-label="Back to connections"
-          className="mr-1 rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 transition-colors"
+          className="mr-1 rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 transition-colors"
         >
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fillRule="evenodd" d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z" clipRule="evenodd" />
@@ -300,7 +300,7 @@ export default function ChatPage() {
         {/* Avatar */}
         <div
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-          style={{ backgroundColor: "#F5A623" }}
+          style={{ backgroundColor: "#7C3AED" }}
           aria-hidden="true"
         >
           {otherProfile?.full_name?.[0]?.toUpperCase() ?? "?"}
@@ -345,17 +345,17 @@ export default function ChatPage() {
                   className={[
                     "max-w-[75%] rounded-2xl px-4 py-2.5 text-sm",
                     isMe
-                      ? "rounded-br-sm text-gray-900"
+                      ? "rounded-br-sm text-white"
                       : "rounded-bl-sm bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100",
                     isOptimistic ? "opacity-70" : "",
                   ].join(" ")}
-                  style={isMe ? { backgroundColor: "#F5A623" } : undefined}
+                  style={isMe ? { backgroundColor: "#7C3AED" } : undefined}
                 >
                   <p className="whitespace-pre-wrap break-words">{msg.body}</p>
                   <p
                     className={[
                       "mt-1 text-right text-[10px]",
-                      isMe ? "text-amber-800/70" : "text-gray-400 dark:text-gray-500",
+                      isMe ? "text-white/60" : "text-gray-400 dark:text-gray-500",
                     ].join(" ")}
                     aria-label={`Sent at ${formatTime(msg.created_at)}`}
                   >
@@ -401,8 +401,8 @@ export default function ChatPage() {
               "bg-white text-gray-900 placeholder:text-gray-400",
               "dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-500",
               "border-gray-300 dark:border-gray-600",
-              "focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30",
-              "dark:focus:border-amber-500 dark:focus:ring-amber-500/30",
+              "focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-400/30",
+              "dark:focus:border-violet-500 dark:focus:ring-violet-500/30",
               "transition-colors duration-150",
               sending ? "opacity-60" : "",
             ].join(" ")}
@@ -415,13 +415,13 @@ export default function ChatPage() {
             aria-label="Send message"
             className={[
               "flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-xl",
-              "text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+              "text-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
               "transition-all duration-150",
               !input.trim() || sending
                 ? "cursor-not-allowed opacity-40"
                 : "hover:brightness-95 active:scale-95",
             ].join(" ")}
-            style={{ backgroundColor: "#F5A623" }}
+            style={{ backgroundColor: "#7C3AED" }}
           >
             {sending ? (
               <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">

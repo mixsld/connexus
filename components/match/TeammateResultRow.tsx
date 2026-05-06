@@ -68,7 +68,7 @@ export default function TeammateResultRow({
           "shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors",
           interested
             ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
-            : "bg-amber-100 text-amber-800 hover:bg-amber-200 dark:bg-amber-900/30 dark:text-amber-300",
+            : "bg-violet-100 text-violet-800 hover:bg-violet-200 dark:bg-violet-900/30 dark:text-violet-300",
         ].join(" ")}
       >
         {loading ? "..." : interested ? "Sent" : "Interested"}

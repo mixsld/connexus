@@ -28,8 +28,8 @@ const inputBase =
 
 const inputNormal =
   inputBase +
-  " border-gray-300 dark:border-gray-600 focus:border-amber-400 " +
-  "focus:ring-amber-400/30 dark:focus:border-amber-500 dark:focus:ring-amber-500/30";
+  " border-gray-300 dark:border-gray-600 focus:border-violet-400 " +
+  "focus:ring-violet-400/30 dark:focus:border-violet-500 dark:focus:ring-violet-500/30";
 
 const inputErr =
   inputBase +
@@ -72,8 +72,8 @@ function TagInput({
       className={
         "flex min-h-[44px] flex-wrap items-center gap-1.5 rounded-lg border " +
         "border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800 " +
-        "focus-within:border-amber-400 focus-within:ring-2 focus-within:ring-amber-400/30 " +
-        "dark:focus-within:border-amber-500 dark:focus-within:ring-amber-500/30 " +
+        "focus-within:border-violet-400 focus-within:ring-2 focus-within:ring-violet-400/30 " +
+        "dark:focus-within:border-violet-500 dark:focus-within:ring-violet-500/30 " +
         "cursor-text transition-colors duration-150"
       }
       onClick={() => ref.current?.focus()}
@@ -81,7 +81,7 @@ function TagInput({
       {tags.map((tag) => (
         <span
           key={tag}
-          className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-300"
+          className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-0.5 text-xs font-medium text-violet-800 dark:bg-violet-900/40 dark:text-violet-300"
         >
           {tag}
           <button
@@ -91,7 +91,7 @@ function TagInput({
               onChange(tags.filter((t) => t !== tag));
             }}
             aria-label={`Remove ${tag}`}
-            className="ml-0.5 rounded-full p-0.5 hover:bg-black/10 dark:hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-amber-500"
+            className="ml-0.5 rounded-full p-0.5 hover:bg-black/10 dark:hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-violet-500"
           >
             <svg className="h-2.5 w-2.5" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
               <path d="M6.28 5l2.36-2.36a.9.9 0 1 0-1.28-1.28L5 3.72 2.64 1.36a.9.9 0 0 0-1.28 1.28L3.72 5 1.36 7.36a.9.9 0 1 0 1.28 1.28L5 6.28l2.36 2.36a.9.9 0 0 0 1.28-1.28L6.28 5Z" />
@@ -215,9 +215,9 @@ function RolesEditor({
         className={
           "flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed " +
           "border-gray-300 py-3 text-sm font-medium text-gray-500 " +
-          "hover:border-amber-400 hover:text-amber-600 " +
-          "dark:border-gray-600 dark:text-gray-400 dark:hover:border-amber-500 dark:hover:text-amber-400 " +
-          "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 " +
+          "hover:border-violet-400 hover:text-violet-600 " +
+          "dark:border-gray-600 dark:text-gray-400 dark:hover:border-violet-500 dark:hover:text-violet-400 " +
+          "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 " +
           "transition-colors duration-150"
         }
       >
@@ -479,7 +479,7 @@ export default function NewProjectPage() {
               "inline-flex min-h-[44px] items-center justify-center rounded-lg px-5 py-2.5 " +
               "text-sm font-medium text-gray-700 dark:text-gray-300 " +
               "bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 " +
-              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 " +
+              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 " +
               "transition-colors duration-150"
             }
           >
@@ -492,14 +492,14 @@ export default function NewProjectPage() {
             aria-busy={saving}
             className={[
               "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg px-6 py-2.5",
-              "text-sm font-semibold text-gray-900",
-              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+              "text-sm font-semibold text-white",
+              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
               "transition-all duration-150",
               saving || !myProfileId
                 ? "cursor-not-allowed opacity-60"
                 : "hover:brightness-95 active:scale-[0.98]",
             ].join(" ")}
-            style={{ backgroundColor: "#F5A623" }}
+            style={{ backgroundColor: "#7C3AED" }}
           >
             {saving ? (
               <>

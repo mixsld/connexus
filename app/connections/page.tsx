@@ -210,12 +210,12 @@ export default function ConnectionsPage() {
       {/* Empty state */}
       {!error && conversations.length === 0 && (
         <div className="flex flex-col items-center justify-center gap-4 py-20 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50 dark:bg-violet-900/20">
             <svg
               className="h-8 w-8"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#F5A623"
+              stroke="#7C3AED"
               strokeWidth={1.5}
               aria-hidden="true"
             >
@@ -237,8 +237,8 @@ export default function ConnectionsPage() {
           </div>
           <a
             href="/match"
-            className="mt-2 inline-flex min-h-[44px] items-center rounded-lg px-5 py-2.5 text-sm font-semibold text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 transition-all hover:brightness-95"
-            style={{ backgroundColor: "#F5A623" }}
+            className="mt-2 inline-flex min-h-[44px] items-center rounded-lg px-5 py-2.5 text-sm font-semibold text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 transition-all hover:brightness-95"
+            style={{ backgroundColor: "#7C3AED" }}
           >
             Find matches
           </a>
@@ -256,10 +256,10 @@ export default function ConnectionsPage() {
                   "flex items-center gap-4 rounded-2xl border p-4",
                   "bg-white dark:bg-gray-900",
                   conv.unread
-                    ? "border-amber-300 dark:border-amber-700"
+                    ? "border-violet-300 dark:border-violet-700"
                     : "border-gray-200 dark:border-gray-700",
                   "hover:shadow-md transition-all duration-150",
-                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
                 ].join(" ")}
                 aria-label={[
                   conv.otherProfile?.full_name ?? "Unknown",
@@ -274,7 +274,7 @@ export default function ConnectionsPage() {
                 {/* Avatar */}
                 <div
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold text-white"
-                  style={{ backgroundColor: "#F5A623" }}
+                  style={{ backgroundColor: "#7C3AED" }}
                   aria-hidden="true"
                 >
                   {conv.otherProfile?.full_name?.[0]?.toUpperCase() ?? "?"}
@@ -332,7 +332,7 @@ export default function ConnectionsPage() {
                 {conv.unread && (
                   <span
                     className="h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: "#F5A623" }}
+                    style={{ backgroundColor: "#7C3AED" }}
                     aria-hidden="true"
                   />
                 )}

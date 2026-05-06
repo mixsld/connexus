@@ -35,7 +35,7 @@ interface Project {
 
 function SkillChip({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">
+    <span className="inline-flex items-center rounded-full bg-violet-100 px-2.5 py-0.5 text-xs font-medium text-violet-800 dark:bg-violet-900/40 dark:text-violet-300">
       {label}
     </span>
   );
@@ -114,7 +114,7 @@ function TeammateFinder({ project, myProfileId, onClose }: TeammateFinderProps) 
 
   return (
     <div
-      className="mt-4 rounded-2xl border border-amber-200 bg-amber-50/50 p-4 dark:border-amber-800/40 dark:bg-amber-900/10"
+      className="mt-4 rounded-2xl border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-800/40 dark:bg-violet-900/10"
       role="region"
       aria-label={`Teammate suggestions for ${project.title}`}
     >
@@ -134,7 +134,7 @@ function TeammateFinder({ project, myProfileId, onClose }: TeammateFinderProps) 
           type="button"
           onClick={onClose}
           aria-label="Close teammate suggestions"
-          className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 transition-colors"
+          className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 transition-colors"
         >
           <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
@@ -259,11 +259,11 @@ function ProjectCard({ project, myProfileId, isOwner }: ProjectCardProps) {
               type="button"
               onClick={() => setShowTeammates(true)}
               className={[
-                "flex w-full min-h-[40px] items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-gray-900",
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+                "flex w-full min-h-[40px] items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
                 "transition-all duration-150 hover:brightness-95 active:scale-[0.98]",
               ].join(" ")}
-              style={{ backgroundColor: "#F5A623" }}
+              style={{ backgroundColor: "#7C3AED" }}
               aria-expanded={showTeammates}
               aria-controls={`teammates-${project.id}`}
             >
@@ -389,11 +389,11 @@ export default function ProjectsPage() {
         <a
           href="/projects/new"
           className={[
-            "inline-flex min-h-[44px] items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-gray-900",
-            "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+            "inline-flex min-h-[44px] items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white",
+            "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
             "transition-all hover:brightness-95 active:scale-[0.98]",
           ].join(" ")}
-          style={{ backgroundColor: "#F5A623" }}
+          style={{ backgroundColor: "#7C3AED" }}
         >
           <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
@@ -415,8 +415,8 @@ export default function ProjectsPage() {
       {/* Empty state */}
       {!error && projects.length === 0 && (
         <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20">
-            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="#F5A623" strokeWidth={1.5} aria-hidden="true">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50 dark:bg-violet-900/20">
+            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth={1.5} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
             </svg>
           </div>
@@ -426,8 +426,8 @@ export default function ProjectsPage() {
           </div>
           <a
             href="/projects/new"
-            className="mt-2 inline-flex min-h-[44px] items-center rounded-lg px-5 py-2.5 text-sm font-semibold text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 transition-all hover:brightness-95"
-            style={{ backgroundColor: "#F5A623" }}
+            className="mt-2 inline-flex min-h-[44px] items-center rounded-lg px-5 py-2.5 text-sm font-semibold text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 transition-all hover:brightness-95"
+            style={{ backgroundColor: "#7C3AED" }}
           >
             Post a project
           </a>

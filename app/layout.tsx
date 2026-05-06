@@ -52,7 +52,7 @@ export default function RootLayout({
               >
                 <span
                   className="h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: "#FFD100" }}
+                  style={{ backgroundColor: "#7C3AED" }}
                   aria-hidden="true"
                 />
                 <span className="text-base font-bold tracking-tight text-gray-900 dark:text-gray-50">
@@ -63,7 +63,6 @@ export default function RootLayout({
               {/* Right side nav */}
               <div className="flex items-center gap-1">
                 <NavLinks />
-                <LogoutButton />
               </div>
             </div>
           </header>

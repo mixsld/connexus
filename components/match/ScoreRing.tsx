@@ -90,7 +90,7 @@ export default function ScoreRing({
         cy={center}
         r={radius}
         fill="none"
-        stroke="#F5A623"
+        stroke="#7C3AED"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeDasharray={circumference}

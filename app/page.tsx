@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-white dark:bg-gray-950">
-      {/* Premium gold: #D4A853 with soft gradients */}
+      {/* Purple gradient background */}
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
       >
         <div
-          className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#D4A853] to-[#F3D38E] opacity-10"
+          className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#7C3AED] to-[#A78BFA] opacity-10"
           style={{
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
@@ -20,13 +20,13 @@ export default function HomePage() {
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:flex lg:items-center lg:gap-x-12 lg:px-8 lg:pt-28">
         {/* Left column – text */}
         <div className="max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl">
-          <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-xs font-medium text-gray-600 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400">
-            <span className="mr-2 flex h-2 w-2 rounded-full bg-[#D4A853]"></span>
+          <div className="inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-4 py-1.5 text-xs font-medium text-purple-700 dark:border-purple-800 dark:bg-purple-900/40 dark:text-purple-300">
+            <span className="mr-2 flex h-2 w-2 rounded-full bg-[#7C3AED]"></span>
             Now matching Thomasians across 18+ colleges
           </div>
           <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             Build{" "}
-            <span className="bg-gradient-to-r from-[#D4A853] to-[#F3D38E] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] bg-clip-text text-transparent">
               together
             </span>
             , beyond your college.
@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/auth/signup"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-[#D4A853] px-8 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#B8903E] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4A853]"
+              className="inline-flex h-12 items-center gap-2 rounded-full bg-[#7C3AED] px-8 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#6D28D9] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
             >
               Get started free
               <svg
@@ -59,7 +59,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex h-12 items-center rounded-full border border-gray-300 bg-white px-8 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-gray-400 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4A853]"
+              className="inline-flex h-12 items-center rounded-full border border-gray-300 bg-white px-8 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-gray-400 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
             >
               Sign in
             </Link>
@@ -91,17 +91,16 @@ export default function HomePage() {
         {/* Right column – visual illustration */}
         <div className="mt-14 flex justify-center lg:mt-0 lg:flex-1 lg:pl-8">
           <div className="relative w-full max-w-md lg:max-w-none">
-            {/* Soft backdrop card */}
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 shadow-xl ring-1 ring-gray-200/60 dark:from-gray-900 dark:to-gray-950 dark:ring-gray-800/60">
-              {/* Decorative gradient blobs behind cards */}
-              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[#D4A853]/10 blur-2xl" />
-              <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-[#D4A853]/5 blur-2xl" />
+              {/* Decorative gradient blobs behind cards — now purple */}
+              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[#7C3AED]/10 blur-2xl" />
+              <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-[#7C3AED]/5 blur-2xl" />
 
               <div className="relative space-y-4">
                 {/* Match card 1 */}
                 <div className="flex items-center gap-4 rounded-2xl bg-white/90 p-4 shadow-sm ring-1 ring-gray-100 backdrop-blur dark:bg-gray-800/90 dark:ring-gray-700">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A853]/10 dark:bg-[#D4A853]/20">
-                    <span className="text-lg font-bold text-[#D4A853]">CS</span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7C3AED]/10 dark:bg-[#7C3AED]/20">
+                    <span className="text-lg font-bold text-[#7C3AED]">CS</span>
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900 dark:text-white">
@@ -118,8 +117,8 @@ export default function HomePage() {
 
                 {/* Match card 2 */}
                 <div className="flex items-center gap-4 rounded-2xl bg-white/90 p-4 shadow-sm ring-1 ring-gray-100 backdrop-blur dark:bg-gray-800/90 dark:ring-gray-700">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A853]/10 dark:bg-[#D4A853]/20">
-                    <span className="text-lg font-bold text-[#D4A853]">MD</span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7C3AED]/10 dark:bg-[#7C3AED]/20">
+                    <span className="text-lg font-bold text-[#7C3AED]">MD</span>
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900 dark:text-white">
@@ -134,9 +133,9 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                {/* Connecting swoosh */}
+                {/* Connecting swoosh — now purple */}
                 <svg
-                  className="absolute -right-6 top-8 -z-10 h-48 w-48 text-[#D4A853]/20 dark:text-[#D4A853]/30"
+                  className="absolute -right-6 top-8 -z-10 h-48 w-48 text-[#7C3AED]/20 dark:text-[#7C3AED]/30"
                   viewBox="0 0 200 200"
                   fill="none"
                   stroke="currentColor"
@@ -151,7 +150,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Feature section — separate from hero, clearly visible */}
+      {/* Feature section */}
       <div className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-3">
           {[
@@ -187,9 +186,9 @@ export default function HomePage() {
           ].map((feature) => (
             <div
               key={feature.title}
-              className="group relative rounded-2xl border border-gray-200/60 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-[#D4A853]/30 dark:border-gray-800/60 dark:bg-gray-900 dark:hover:border-[#D4A853]/30"
+              className="group relative rounded-2xl border border-gray-200/60 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-[#7C3AED]/30 dark:border-gray-800/60 dark:bg-gray-900 dark:hover:border-[#7C3AED]/30"
             >
-              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#D4A853]/10 text-[#D4A853] dark:bg-[#D4A853]/20">
+              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#7C3AED]/10 text-[#7C3AED] dark:bg-[#7C3AED]/20">
                 <svg
                   className="h-5 w-5"
                   viewBox="0 0 20 20"

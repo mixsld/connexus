@@ -31,8 +31,8 @@ const inputBase = [
 const inputNormal = [
   inputBase,
   "border-gray-300 dark:border-gray-600",
-  "focus:border-amber-400 focus:ring-amber-400/30",
-  "dark:focus:border-amber-500 dark:focus:ring-amber-500/30",
+  "focus:border-violet-400 focus:ring-violet-400/30",
+  "dark:focus:border-violet-500 dark:focus:ring-violet-500/30",
 ].join(" ");
 
 const inputError = [
@@ -140,7 +140,7 @@ export default function SignUpPage() {
           <div className="rounded-2xl border border-gray-200 bg-white px-8 py-10 text-center shadow-sm dark:border-gray-700 dark:bg-gray-900">
             <span
               className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full"
-              style={{ backgroundColor: "#F5A623" }}
+              style={{ backgroundColor: "#7C3AED" }}
               aria-hidden="true"
             >
               <svg
@@ -165,7 +165,7 @@ export default function SignUpPage() {
             </p>
             <a
               href="/auth/login"
-              className="mt-6 inline-block text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+              className="mt-6 inline-block text-sm font-medium text-violet-600 hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
             >
               Back to sign in
             </a>
@@ -184,7 +184,7 @@ export default function SignUpPage() {
           <div className="mb-8 text-center">
             <span
               className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full"
-              style={{ backgroundColor: "#F5A623" }}
+              style={{ backgroundColor: "#7C3AED" }}
               aria-hidden="true"
             >
               <svg
@@ -363,14 +363,14 @@ export default function SignUpPage() {
               aria-busy={loading}
               className={[
                 "flex w-full min-h-[44px] items-center justify-center gap-2",
-                "rounded-lg px-4 py-2.5 text-sm font-semibold text-gray-900",
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
+                "rounded-lg px-4 py-2.5 text-sm font-semibold text-white",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500",
                 "transition-all duration-150",
                 loading
                   ? "cursor-not-allowed opacity-60"
                   : "hover:brightness-95 active:scale-[0.98]",
               ].join(" ")}
-              style={{ backgroundColor: "#F5A623" }}
+              style={{ backgroundColor: "#7C3AED" }}
             >
               {loading ? (
                 <>
@@ -407,7 +407,7 @@ export default function SignUpPage() {
             Already have an account?{" "}
             <a
               href="/auth/login"
-              className="font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+              className="font-medium text-violet-600 hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
             >
               Sign in
             </a>
