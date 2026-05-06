@@ -1,21 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { useAuth } from "./AuthProvider";
 
 export default function LogoutButton() {
   const router = useRouter();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setIsLoggedIn(!!user);
-      setLoading(false);
-    });
-  }, []);
+  const { user, loading } = useAuth();
 
   async function handleLogout() {
     const supabase = createClient();
@@ -23,11 +14,7 @@ export default function LogoutButton() {
     router.push("/auth/login");
   }
 
-  // Don't show anything while we're checking auth (prevents flicker)
-  if (loading) return null;
-
-  // If no user, render nothing
-  if (!isLoggedIn) return null;
+  if (loading || !user) return null;
 
   return (
     <button

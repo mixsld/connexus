@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { useAuth } from "./AuthProvider";
 
-// ── Icons ──────────────────────────────────────────────────────────────────
+// ── Icons ──────────────────────────────────────────────────────────────────────
+
 function MenuIcon() {
   return (
     <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -31,29 +33,20 @@ function LogoutIcon() {
   );
 }
 
-// ── NavLinks ──────────────────────────────────────────────────────────────
+// ── NavLinks ──────────────────────────────────────────────────────────────────
+
 export default function NavLinks() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const { user, loading } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setIsLoggedIn(!!user);
-      setLoading(false);
-    });
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  if (loading) return null;
-  if (!isLoggedIn) return null;
+  if (loading || !user) return null;
 
   const linkClasses = (href: string) =>
     `inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -76,7 +69,7 @@ export default function NavLinks() {
 
   return (
     <>
-      {/* ── Desktop view ──────────────────────────────────────────────── */}
+      {/* ── Desktop links ───────────────────────────────────────────────── */}
       <div className="hidden md:flex md:items-center md:gap-1">
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href} className={linkClasses(link.href)}>
@@ -92,7 +85,7 @@ export default function NavLinks() {
         </button>
       </div>
 
-      {/* ── Mobile hamburger ──────────────────────────────────────────── */}
+      {/* ── Mobile hamburger ────────────────────────────────────────────── */}
       <div className="md:hidden">
         <button
           type="button"
@@ -105,7 +98,7 @@ export default function NavLinks() {
         </button>
       </div>
 
-      {/* ── Mobile dropdown ───────────────────────────────────────────── */}
+      {/* ── Mobile dropdown ─────────────────────────────────────────────── */}
       {mobileOpen && (
         <div className="absolute left-0 right-0 top-full z-50 border-b border-gray-200 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900 md:hidden">
           <nav className="flex flex-col gap-1 px-4 py-3">

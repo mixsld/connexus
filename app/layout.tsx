@@ -6,6 +6,7 @@ import ModeToggle from "@/components/ui/ModeToggle";
 import LogoutButton from "@/components/ui/LogoutButton";
 import NotificationBadge from "@/components/ui/NotificationBadge";
 import NavLinks from "@/components/ui/NavLinks";
+import { AuthProvider } from "@/components/ui/AuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <ThemeProvider>
+          <AuthProvider>
           <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/80">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
               {/* Wordmark */}
@@ -69,6 +71,7 @@ export default function RootLayout({
               © {new Date().getFullYear()} Connexus · University of Santo Tomas
             </p>
           </footer>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
