@@ -91,10 +91,8 @@ export default function HomePage() {
         {/* Right column – visual illustration */}
         <div className="mt-14 flex justify-center lg:mt-0 lg:flex-1 lg:pl-8">
           <div className="relative w-full max-w-md lg:max-w-none">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 shadow-xl ring-1 ring-gray-200/60 dark:from-gray-900 dark:to-gray-950 dark:ring-gray-800/60">
+            <div className="relative overflow-hidden rounded-3xl p-6 shadow-xs ring-1 ring-gray-200/60 dark:from-gray-900 dark:to-gray-950 dark:ring-gray-800/60">
               {/* Decorative gradient blobs behind cards — now purple */}
-              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[#7C3AED]/10 blur-2xl" />
-              <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-[#7C3AED]/5 blur-2xl" />
 
               <div className="relative space-y-4">
                 {/* Match card 1 */}
